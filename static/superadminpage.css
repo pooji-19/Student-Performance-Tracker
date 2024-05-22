@@ -1,0 +1,124 @@
+body{
+    background-image: url("/static/temp3.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 180vh;
+}
+.third{
+    position: absolute;
+    top: 500px;
+    left: 100px;
+}
+.first h1{
+    position: absolute;
+    left: 100px;
+    /* color: white; */
+    color: #be4e1b;
+}
+.first .left{
+    font-size: 30px;
+    position: absolute;
+    left: 100px;
+    top: 120px;
+    color: white;
+}
+
+.first .right h2{
+    font-size: 30px;
+    position: absolute;
+    left: 1200px;
+    top: 60px;
+    color: white;
+}
+.first .right .rank{
+    position: absolute;
+    top: 95px;
+    left: 1230px;
+    font-size: 60px;
+    color: rgb(200, 122, 125);
+}
+.first .right .box{
+    height: 8vh;
+    width: 80px;
+    border: 5px solid rgb(200, 122, 125);
+    position: absolute;
+    left: 1200px;
+    border-radius: 30%;
+    top: 130px;
+}
+
+.first .middle img{
+    position: absolute;
+    left: 500px;
+    top: 100px;
+}
+
+.second .box2{
+    position: absolute;
+    height: 7vh;
+    width: 1200px;
+    border: 1px solid rgb(200, 122, 125);
+    background-color: rgb(200, 122, 125);
+    top: 310px;
+    left: 100px;
+}
+.second .top{
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    font-size: 30px;
+    color: white;
+}
+.second .list{
+    position: absolute;
+    left: 180px;
+    top: 310px;
+    display: flex;
+    
+}
+
+.second .list li{
+    width: 210px;
+    list-style: none;
+    font-size: 20px;
+    color: white;
+}
+
+.second .box3{
+    position: absolute;
+    height: 7vh;
+    width: 1200px;
+    border: 1px solid rgb(200, 122, 125);
+    background-color: rrgb(200, 122, 125);
+    top: 370px;
+    left: 100px;
+}
+.second .list2{
+    position: absolute;
+    left: 180px;
+    top: 370px;
+    display: flex;
+    
+}
+
+.second .list2 li{
+    width: 210px;
+    list-style: none;
+    font-size: 20px;
+    color: white;
+}
+
+.third .left{
+    position: absolute;
+    top: 450px;
+    left: 220px;
+    border: 4px solid #ffffff7f;
+}
+.third .right{
+    border : 4px solid #ffffff7f;
+    position: absolute;
+    left: 790px;
+    top: 460px;
+}

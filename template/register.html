@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/register.css">
+</head>
+<body>
+    <div class="full">
+        <h1></h1>
+        <form action="{{ url_for('register') }}" method="post">
+            <!-- Headings for the form -->
+            
+            <div class="headingsContainer">
+                <img src="/static/rgmhack.jpeg" alt="" width="80">
+                <h1>Sign Up</h1>
+                <p>Sign Up with your username and password</p>
+            </div>
+                {% if msg %}
+                <p>{{ msg }}</p>
+                {% endif %}
+            <!-- Main container for all inputs -->
+            <div class="mainContainer">
+                <!--Admin Type-->
+                <label for="username"><br>Your username</label>
+                <input type="text" placeholder="Enter Username" id="user-name" name="username" required>
+    
+                <!-- Username -->
+                <label for="newPassword"><br>Enter Password</label>
+                <input type="password" placeholder="Enter Password" id="new-pass" name="newPassword" required>
+    
+                <br><br>
+    
+                <!-- Password -->
+                <label for="confirmPswrd">Confirm YourPassword</label>
+                <input type="password" placeholder="Confirm Your Password" name="pswrd" required>
+    
+                <!-- sub container for the checkbox and forgot password link -->
+                <!--  <div class="subcontainer">
+                    <label>
+                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                    <p class="forgotpsd"> <a href="forgotPassword.html">Forgot Password?</a></p>
+                </div>  -->
+    
+    
+                <!-- Submit button -->
+                <button type="submit" onclick="toSuccess()"> Submit</a></button>
+    
+                <!-- Sign up link -->
+                <!-- <p class="register">N\  <a href="#">Register here!</a></p> -->
+    
+            </div>
+    
+        </form>
+    </div>
+</body>
+<script>
+    function toSuccess(){
+        window.location.assign('success.html');
+    }
+</script>
+</html>

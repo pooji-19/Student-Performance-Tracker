@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page in HTML</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='loginpage.css') }}">  
+</head>
+<body>
+    <div class="full">
+    <h1></h1>
+
+    <form method = "POST" action="{{ url_for('login') }}">
+        <!-- Headings for the form -->
+        
+        <div class="headingsContainer">
+            <img src="/static/rgmhack.jpeg" alt="" width="80">
+            <h1>Log in</h1>
+            <p>Log in with your username and password</p>
+        </div>
+        <!-- Main container for all inputs -->
+        <div class="mainContainer">
+            <!-- Admin Type
+            <label class="Admin" for="admin">Choose Admin Type :</label>
+            <select id="admin" name="admin">
+                <option value="Super Admin">Super Admin</option>
+                <option value="Admin">Admin</option>
+                <option value="Student">Student</option>
+            </select> -->
+            <br>
+            {% if msg %}
+            <p>{{ msg }}</p>
+                {% endif %}
+            <!-- Username -->
+            <label for="username"><br>Your username</label>
+            <input id = "username" type="text" placeholder="Enter Username" id="user-name" name="username" required>
+
+            <br><br>
+
+            <!-- Password -->
+            <label for="pswrd">Your password</label>
+            <input id = "password" type="password" placeholder="Enter Password" name="pswrd" required>
+
+            <!-- sub container for the checkbox and forgot password link -->
+            <div class="subcontainer">
+                <!-- <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label> -->
+                <!-- <p class="forgotpsd"> <a href="forgotPassword.html">Forgot Password?</a></p>
+            </div> -->
+
+
+            <!-- Submit button -->
+            <button type="submit" > <a href="mainPage.html" style="color: white; text-decoration: none;">Login</a> </button>
+            
+
+            <!-- Sign up link -->
+            <p class="register">Not a member?  <a href="register.html">Register here!</a></p>
+
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
