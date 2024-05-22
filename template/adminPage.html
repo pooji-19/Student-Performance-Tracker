@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/adminPage.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .one{
+            position: absolute;
+            top: 450px;
+            left: 10px;
+        }
+        .two{
+            position: absolute;
+            top: 450px;
+            left: 620px;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('adminpage') }}" method="post">
+    <div class="container">
+        <div class="first">
+            <h1 style="font-size: 40px; color:orange;"><i>Admin DashBoard</i></h1>
+            <h2> Achievers</h2>
+            <div class="left">
+               {{student_1}}<br>
+              {{student_2}} <br>
+              {{student_3}}
+            </div>
+            <!-- <div class="middle">
+                <img src="/static/waves.jpeg" alt="" width="500px" height="100px">
+            </div> -->
+            
+            <div class="right">
+                <h2>Rank</h2>
+                <div class="box">
+                </div>
+                <h1 class="rank">{{rank}}</h1>
+            </div>
+            <!-- <div class="middle">
+                <img src="/static/waves.jpeg">
+            </div> -->
+        </div>
+        <div class="second">
+            <div class="box2"></div>
+            <div class="top">Attendence Indicators</div>
+            <ul class="list">
+                <li>CSEDS</li>
+                <li>CSEBS</li>
+                <li>Civil</li>
+                <li>ECE</li>
+            </ul>
+            <div class="box3"></div>
+            <ul class="list2">
+                <li>{{cseds_avg}}</li>
+                <li>{{csebs_avg}}</li>
+                <li>{{civil_avg}}</li>
+                <li>{{ece_avg}}</li>
+            </ul>
+        </div>
+        <div class="one" id="plot1" style="width: 50%; display: inline-block;"></div>
+        <div class="two" id="plot2" style="width: 50%; display: inline-block;"></div>
+        <script>
+            var plot1_data = {{ pie_std_quantity|safe }};
+            var plot2_data = {{ plot_dept_count|safe }};
+           
+            Plotly.newPlot('plot1', plot1_data.data, plot1_data.layout);
+            Plotly.newPlot('plot2', plot2_data.data, plot2_data.layout);
+           
+        </script>
+    
+        <!-- <div class="third">
+            <div class="left">
+                <img src="/static/bargraph.png" alt="" width="350px" height="350px">
+            </div>
+            <div class="right">
+                <img src="/static/piechar.png" alt="" width="300px" height="300px">
+            </div>
+        </div> -->
+    </div>
+</form>
+<!-- Code injected by live-server -->
+<!-- <script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script> -->
+</body>
+</html>
