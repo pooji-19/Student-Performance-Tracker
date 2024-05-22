@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,4 +74,81 @@
     </div>
 </form>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/mainPage.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   <style>
+        .one{
+            position: absolute;
+            top : 450px;
+            left: 10px;
+        }
+        .two{
+            position: absolute;
+            top: 450px;
+            left:600px;
+        }
+   </style>
+
+</head>
+<body>
+    <form action="{{ url_for('mainPage') }}" method="post">
+    <div class="container">
+        <div class="first">
+            <h1 style="font-size: 40px;"><i>Student DashBoard</i></h1>
+            <div class="left">
+               {{student_name}}
+            </div>
+            <!-- <div class="middle">
+                <img src="/static/waves.jpeg" alt="" width="500px" height="100px">
+            </div> -->
+            <div class="right">
+                <h2>Rank</h2>
+                <div class="box">
+                </div>
+                <h1 class="rank">{{student_rank}}</h1>
+            </div>
+        </div>
+        <div class="second">
+            <div class="box2"></div>
+            <div class="top">Performance Indicators</div>
+            <ul class="list">
+                <li>Test_name</li>
+                <li>Score</li>
+                <li>Overall Average</li>
+                <li>Performance</li>
+            </ul>
+            <div class="box3"></div>
+            <ul class="list2">
+                <li>Test_05</li>
+                <li>{{student_latest_test_marks}}</li>
+                <li>{{student_overall_test_score}}</li>
+                <li>{{student_present_performance}}</li>
+            </ul>
+
+            <div  class="one" id="plot3" style="width: 50%; display: inline-block;"></div>
+            <div class="two" id="plot4" style="width: 50%; display: inline-block;"></div>
+        
+            <script>
+                var all_sub_marks = {{ plot_all_sub|safe }};
+                var test_marks = {{ plot_test|safe }};
+        
+        
+                Plotly.newPlot('plot3', all_sub_marks.data, all_sub_marks.layout);
+                Plotly.newPlot('plot4', test_marks.data, test_marks.layout);
+            </script>
+        
+        </div>
+
+    </div>
+</form>
+</body>
+>>>>>>> 30a0413c93eb20c9c58b212f45e255cfbed630c8
 </html>
